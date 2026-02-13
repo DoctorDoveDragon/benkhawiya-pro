@@ -4,10 +4,13 @@ Deployable to sacredtreeofthephoenix.org
 """
 from fastapi import FastAPI, HTTPException, Depends
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from contextlib import asynccontextmanager
 import logging
 import os
 from typing import Dict, Any
+from pathlib import Path
 
 from app.core.cosmic_engine import BenkhawiyaEngine, CouncilAspect, CosmicDecision
 
@@ -121,6 +124,14 @@ async def calculate_golden_progression(
         "progression_value": progression,
         "description": f"Cosmic developmental progression at stage {n}"
     }
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    """Serve the favicon.ico file"""
+    favicon_path = Path(__file__).parent / "static" / "favicon.ico"
+    if favicon_path.exists():
+        return FileResponse(favicon_path, media_type="image/x-icon")
+    raise HTTPException(status_code=404, detail="Favicon not found")
 
 if __name__ == "__main__":
     import uvicorn
