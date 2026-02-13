@@ -51,6 +51,7 @@ class BenkhawiyaEngine:
     def _initialize_cosmic_principles(self) -> List[CosmicPrinciple]:
         """42 Ka Cube Principles - Professional Implementation"""
         return [
+            # PELU Principles (Truth, Boundaries, Integrity) - 11 principles
             CosmicPrinciple(
                 id=1, name="DÁNÁ", meaning="Truth Alignment",
                 description="Fundamental reality alignment and cosmic truth measurement",
@@ -59,18 +60,297 @@ class BenkhawiyaEngine:
                 practical_application="Reality verification and truth discernment"
             ),
             CosmicPrinciple(
-                id=2, name="MÁTÁ", meaning="Justice Balance", 
+                id=2, name="KÉLÚ", meaning="Boundary Clarity",
+                description="Clear delineation of sacred boundaries and limits",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="∂Ω/∂t = 0",
+                practical_application="Setting healthy boundaries and limits"
+            ),
+            CosmicPrinciple(
+                id=3, name="SÉTÁ", meaning="Precision Measurement",
+                description="Accurate measurement and assessment of reality",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="ε_measure → 0",
+                practical_application="Data-driven decision making"
+            ),
+            CosmicPrinciple(
+                id=4, name="WÉNÁ", meaning="Integrity Shield",
+                description="Protection and maintenance of wholeness and authenticity",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="∮ integrity·dl = 1",
+                practical_application="Maintaining ethical standards"
+            ),
+            CosmicPrinciple(
+                id=5, name="PÉKÁ", meaning="Discernment Light",
+                description="Clear seeing and wise judgment of situations",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="L_discern = ∫clarity·dλ",
+                practical_application="Critical thinking and analysis"
+            ),
+            CosmicPrinciple(
+                id=6, name="RÉNÁ", meaning="Truth Resonance",
+                description="Vibrational alignment with fundamental truth",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="ω_truth ≈ ω_reality",
+                practical_application="Authenticity in communication"
+            ),
+            CosmicPrinciple(
+                id=7, name="TÉLÚ", meaning="Test Validation",
+                description="Verification through rigorous testing",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="P(valid|test) → 1",
+                practical_application="Quality assurance processes"
+            ),
+            CosmicPrinciple(
+                id=8, name="MÉKÁ", meaning="Standard Calibration",
+                description="Alignment with universal standards and measures",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="x_actual = x_standard",
+                practical_application="Standardization and consistency"
+            ),
+            CosmicPrinciple(
+                id=9, name="DÉWÁ", meaning="Honesty Core",
+                description="Foundation of truthful expression and transparency",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="H = -Σp·log(p)",
+                practical_application="Transparent communication"
+            ),
+            CosmicPrinciple(
+                id=10, name="LÉNÁ", meaning="Law Harmony",
+                description="Alignment with natural and cosmic law",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="∇×E = -∂B/∂t",
+                practical_application="Legal and ethical compliance"
+            ),
+            CosmicPrinciple(
+                id=11, name="NÉKÁ", meaning="Clarity Beacon",
+                description="Illumination of truth in darkness",
+                council_aspect=CouncilAspect.PELU,
+                mathematical_representation="I = I₀e^(-μx)",
+                practical_application="Clear documentation and teaching"
+            ),
+            
+            # TEMU Principles (Structure, Proportion, Timing) - 11 principles
+            CosmicPrinciple(
+                id=12, name="MÁTÁ", meaning="Justice Balance", 
                 description="Right relationship and cosmic balance maintenance",
                 council_aspect=CouncilAspect.TEMU,
                 mathematical_representation="Â_justice = ∫balance·dΩ",
                 practical_application="Fairness and equitable distribution"
             ),
             CosmicPrinciple(
-                id=3, name="HÓTÉ", meaning="Harmonic Integration",
+                id=13, name="FÍSÁ", meaning="Golden Proportion",
+                description="Divine proportion and harmonic ratios in manifestation",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="φ = (1+√5)/2",
+                practical_application="Aesthetic and functional design"
+            ),
+            CosmicPrinciple(
+                id=14, name="RÍTÁ", meaning="Sacred Timing",
+                description="Perfect timing and synchronization with cosmic cycles",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="t_optimal = Φ(cycle)",
+                practical_application="Project planning and scheduling"
+            ),
+            CosmicPrinciple(
+                id=15, name="SÍMÁ", meaning="Symmetry Order",
+                description="Balanced structure and mirrored harmony",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="S(x) = S(-x)",
+                practical_application="Organizational structure design"
+            ),
+            CosmicPrinciple(
+                id=16, name="KRÍÁ", meaning="Crystalline Matrix",
+                description="Perfect geometric structure and lattice formation",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="A·B = 0",
+                practical_application="Systems architecture"
+            ),
+            CosmicPrinciple(
+                id=17, name="BÓNÁ", meaning="Foundation Strength",
+                description="Solid base and structural integrity",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="σ_max < σ_yield",
+                practical_application="Infrastructure development"
+            ),
+            CosmicPrinciple(
+                id=18, name="DRÍÁ", meaning="Distribution Flow",
+                description="Optimal resource allocation and flow",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="∇·F = ρ",
+                practical_application="Resource management"
+            ),
+            CosmicPrinciple(
+                id=19, name="KÓNÁ", meaning="Sacred Geometry",
+                description="Divine patterns in form and structure",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="V = ∫∫∫ dV",
+                practical_application="Spatial planning"
+            ),
+            CosmicPrinciple(
+                id=20, name="TRÍÁ", meaning="Threefold Unity",
+                description="Trinity principle in manifestation",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="Ψ = ψ₁ + ψ₂ + ψ₃",
+                practical_application="Three-pillar frameworks"
+            ),
+            CosmicPrinciple(
+                id=21, name="MÉNÁ", meaning="Measure Exactness",
+                description="Precise quantification and metrics",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="Δx·Δp ≥ ℏ/2",
+                practical_application="Performance measurement"
+            ),
+            CosmicPrinciple(
+                id=22, name="ÁRÍÁ", meaning="Hierarchical Order",
+                description="Natural ordering and stratification",
+                council_aspect=CouncilAspect.TEMU,
+                mathematical_representation="E₀ < E₁ < E₂ < ...",
+                practical_application="Organizational hierarchy"
+            ),
+            
+            # SEWU Principles (Nurturing, Connection, Community) - 10 principles
+            CosmicPrinciple(
+                id=23, name="HÓTÉ", meaning="Harmonic Integration",
                 description="Coherent integration of diverse elements into unified whole",
                 council_aspect=CouncilAspect.SEWU,
                 mathematical_representation="Â_harmony = Σ(sin(ωt + φ))",
                 practical_application="Conflict resolution and relationship harmony"
+            ),
+            CosmicPrinciple(
+                id=24, name="LÚVÁ", meaning="Love Resonance",
+                description="Vibrational frequency of unconditional love",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="L(r) = k/r²",
+                practical_application="Compassionate relationships"
+            ),
+            CosmicPrinciple(
+                id=25, name="ÚNÍÁ", meaning="Unity Consciousness",
+                description="Recognition of interconnectedness of all being",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="Ψ_collective = ⨂Ψᵢ",
+                practical_application="Community building"
+            ),
+            CosmicPrinciple(
+                id=26, name="KÁRÉ", meaning="Care Nurturing",
+                description="Tender attention and supportive growth",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="dG/dt = r·G·(1-G/K)",
+                practical_application="Mentorship and support"
+            ),
+            CosmicPrinciple(
+                id=27, name="ÉMÚÁ", meaning="Empathy Bridge",
+                description="Deep understanding and emotional resonance",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="E_shared = ∫ψ₁*·ψ₂ dτ",
+                practical_application="Active listening"
+            ),
+            CosmicPrinciple(
+                id=28, name="SHÁNÁ", meaning="Sharing Flow",
+                description="Generous circulation of resources and wisdom",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="∮ J·dA = 0",
+                practical_application="Knowledge sharing"
+            ),
+            CosmicPrinciple(
+                id=29, name="HÍLÁ", meaning="Healing Presence",
+                description="Restorative energy and therapeutic power",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="H(t) = H₀·e^(-λt)",
+                practical_application="Healing practices"
+            ),
+            CosmicPrinciple(
+                id=30, name="GRÁWÁ", meaning="Growth Cultivation",
+                description="Organic development and evolutionary progress",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="∂u/∂t = D∇²u",
+                practical_application="Personal development"
+            ),
+            CosmicPrinciple(
+                id=31, name="PÉWÁ", meaning="Peace Stillness",
+                description="Tranquil center and harmonious equilibrium",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="∇V = 0",
+                practical_application="Meditation and calm"
+            ),
+            CosmicPrinciple(
+                id=32, name="JÓYÁ", meaning="Joy Radiance",
+                description="Light emanation of happiness and celebration",
+                council_aspect=CouncilAspect.SEWU,
+                mathematical_representation="J = σT⁴",
+                practical_application="Positive environment"
+            ),
+            
+            # RUWA Principles (Vision, Possibility, Innovation) - 10 principles
+            CosmicPrinciple(
+                id=33, name="VÍSÁ", meaning="Vision Sight",
+                description="Clear perception of future possibilities",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="V(future) = ∫P(t)·dt",
+                practical_application="Strategic planning"
+            ),
+            CosmicPrinciple(
+                id=34, name="CRÉÁ", meaning="Creative Force",
+                description="Generative power of imagination and innovation",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="C = ∂Ψ/∂imagination",
+                practical_application="Innovation and creativity"
+            ),
+            CosmicPrinciple(
+                id=35, name="ÉXPÁ", meaning="Expansion Wave",
+                description="Outward growth and boundary transcendence",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="r(t) = r₀·e^(Ht)",
+                practical_application="Market expansion"
+            ),
+            CosmicPrinciple(
+                id=36, name="TRÁNÁ", meaning="Transformation Alchemy",
+                description="Fundamental change and metamorphosis",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="A → B: ΔG < 0",
+                practical_application="Change management"
+            ),
+            CosmicPrinciple(
+                id=37, name="INSÁ", meaning="Insight Flash",
+                description="Sudden illumination and epiphany",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="I(t) = I₀·δ(t-t₀)",
+                practical_application="Breakthrough thinking"
+            ),
+            CosmicPrinciple(
+                id=38, name="PÓSSÁ", meaning="Possibility Field",
+                description="Quantum potential and multiple futures",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="Ψ = Σcᵢ|ψᵢ⟩",
+                practical_application="Scenario planning"
+            ),
+            CosmicPrinciple(
+                id=39, name="IMÁGÁ", meaning="Imagination Power",
+                description="Mental creation and visualization strength",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="I·V = Reality",
+                practical_application="Visioning exercises"
+            ),
+            CosmicPrinciple(
+                id=40, name="NÓVÁ", meaning="Innovation Spark",
+                description="Novel combination and inventive solutions",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="N = recombine(A,B)",
+                practical_application="Product development"
+            ),
+            CosmicPrinciple(
+                id=41, name="FÓRÉÁ", meaning="Foresight Wisdom",
+                description="Anticipatory knowledge and prophetic vision",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="F(t+Δt) = f(state,t)",
+                practical_application="Risk assessment"
+            ),
+            CosmicPrinciple(
+                id=42, name="ÉVÓÁ", meaning="Evolution Drive",
+                description="Progressive development toward higher complexity",
+                council_aspect=CouncilAspect.RUWA,
+                mathematical_representation="dΩ/dt > 0",
+                practical_application="Continuous improvement"
             )
         ]
     
