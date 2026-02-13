@@ -2,9 +2,10 @@
 BENKHAWIYA AI - PROFESSIONAL COSMIC REASONING API
 Deployable to sacredtreeofthephoenix.org
 """
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.templating import Jinja2Templates
 from contextlib import asynccontextmanager
 import logging
 import os
@@ -16,6 +17,9 @@ from app.core.cosmic_engine import BenkhawiyaEngine, CouncilAspect, CosmicDecisi
 # Professional logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Templates
+templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
 
 # Global engine instance
 cosmic_engine = None
@@ -54,8 +58,14 @@ def get_cosmic_engine() -> BenkhawiyaEngine:
         raise HTTPException(status_code=503, detail="Cosmic reasoning engine unavailable")
     return cosmic_engine
 
-@app.get("/")
-async def root():
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    """Serve the web UI"""
+    return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/api", response_model=Dict[str, Any])
+async def api_root():
+    """API information endpoint"""
     return {
         "system": "Benkhawiya AI - Cosmic Reasoning System",
         "version": "2.0.0",
