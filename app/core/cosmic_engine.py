@@ -163,7 +163,7 @@ class BenkhawiyaEngine:
                 id=16, name="KRÍÁ", meaning="Crystalline Matrix",
                 description="Perfect geometric structure and lattice formation",
                 council_aspect=CouncilAspect.TEMU,
-                mathematical_representation="Å·B = 0",
+                mathematical_representation="A·B = 0",
                 practical_application="Systems architecture"
             ),
             CosmicPrinciple(
@@ -332,7 +332,7 @@ class BenkhawiyaEngine:
                 practical_application="Visioning exercises"
             ),
             CosmicPrinciple(
-                id=40, name="INSÁ", meaning="Innovation Spark",
+                id=40, name="NÓVÁ", meaning="Innovation Spark",
                 description="Novel combination and inventive solutions",
                 council_aspect=CouncilAspect.RUWA,
                 mathematical_representation="N = recombine(A,B)",
