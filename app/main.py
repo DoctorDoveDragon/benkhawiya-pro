@@ -2,18 +2,24 @@
 BENKHAWIYA AI - PROFESSIONAL COSMIC REASONING API
 Deployable to sacredtreeofthephoenix.org
 """
-from fastapi import FastAPI, HTTPException, Depends
+from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.templating import Jinja2Templates
 from contextlib import asynccontextmanager
 import logging
 import os
 from typing import Dict, Any
+from pathlib import Path
 
 from app.core.cosmic_engine import BenkhawiyaEngine, CouncilAspect, CosmicDecision
 
 # Professional logging
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
+
+# Templates
+templates = Jinja2Templates(directory=str(Path(__file__).parent / "templates"))
 
 # Global engine instance
 cosmic_engine = None
@@ -52,8 +58,14 @@ def get_cosmic_engine() -> BenkhawiyaEngine:
         raise HTTPException(status_code=503, detail="Cosmic reasoning engine unavailable")
     return cosmic_engine
 
-@app.get("/")
-async def root():
+@app.get("/", response_class=HTMLResponse)
+async def root(request: Request):
+    """Serve the web UI"""
+    return templates.TemplateResponse("index.html", {"request": request})
+
+@app.get("/api", response_model=Dict[str, Any])
+async def api_root():
+    """API information endpoint"""
     return {
         "system": "Benkhawiya AI - Cosmic Reasoning System",
         "version": "2.0.0",
@@ -121,6 +133,14 @@ async def calculate_golden_progression(
         "progression_value": progression,
         "description": f"Cosmic developmental progression at stage {n}"
     }
+
+@app.get("/favicon.ico", include_in_schema=False)
+async def favicon():
+    """Serve the favicon.ico file"""
+    favicon_path = Path(__file__).parent / "static" / "favicon.ico"
+    if favicon_path.exists():
+        return FileResponse(favicon_path, media_type="image/x-icon")
+    raise HTTPException(status_code=404, detail="Favicon not found")
 
 if __name__ == "__main__":
     import uvicorn
