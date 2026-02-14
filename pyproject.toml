@@ -1,0 +1,36 @@
+[tool.black]
+line-length = 127
+target-version = ['py311']
+include = '\.pyi?$'
+
+[tool.flake8]
+max-line-length = 127
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "venv",
+    "env",
+    ".venv",
+]
+
+[tool.isort]
+profile = "black"
+line_length = 127
+
+[tool.mypy]
+python_version = "3.11"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+
+[tool.bandit]
+exclude_dirs = ["tests", "venv", "env", ".venv"]
+skips = ["B104"]
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
