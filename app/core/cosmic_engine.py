@@ -64,7 +64,7 @@ class BenkhawiyaEngine:
                 meaning="Truth Alignment",
                 description="Fundamental reality alignment and cosmic truth measurement",
                 council_aspect=CouncilAspect.PELU,
-                mathematical_representation="Â_truth = ∇·Ψ_cosmic",
+                mathematical_representation="A_truth = ∇·Ψ_cosmic",
                 practical_application="Reality verification and truth discernment",
             ),
             CosmicPrinciple(
@@ -164,7 +164,7 @@ class BenkhawiyaEngine:
                 meaning="Justice Balance",
                 description="Right relationship and cosmic balance maintenance",
                 council_aspect=CouncilAspect.TEMU,
-                mathematical_representation="Â_justice = ∫balance·dΩ",
+                mathematical_representation="A_justice = ∫balance·dΩ",
                 practical_application="Fairness and equitable distribution",
             ),
             CosmicPrinciple(
@@ -264,7 +264,7 @@ class BenkhawiyaEngine:
                 meaning="Harmonic Integration",
                 description="Coherent integration of diverse elements into unified whole",
                 council_aspect=CouncilAspect.SEWU,
-                mathematical_representation="Â_harmony = Σ(sin(ωt + φ))",
+                mathematical_representation="A_harmony = Σ(sin(ωt + φ))",
                 practical_application="Conflict resolution and relationship harmony",
             ),
             CosmicPrinciple(

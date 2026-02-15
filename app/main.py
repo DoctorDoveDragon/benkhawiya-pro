@@ -5,7 +5,7 @@ Deployable to sacredtreeofthephoenix.org
 
 from fastapi import FastAPI, HTTPException, Depends, Request
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import FileResponse, HTMLResponse
+from fastapi.responses import FileResponse, HTMLResponse, JSONResponse
 from fastapi.templating import Jinja2Templates
 from contextlib import asynccontextmanager
 import logging
@@ -95,13 +95,14 @@ async def health_check():
 @app.get("/principles")
 async def get_cosmic_principles(
     aspect: CouncilAspect = None, engine: BenkhawiyaEngine = Depends(get_cosmic_engine)
-) -> Dict[str, Any]:
+) -> JSONResponse:
     principles = engine.get_principles_by_aspect(aspect) if aspect else engine.principles
-    return {
+    content = {
         "count": len(principles),
         "aspect": aspect.value if aspect else "all",
-        "principles": [principle.dict() for principle in principles],
+        "principles": [principle.model_dump() for principle in principles],
     }
+    return JSONResponse(content=content, media_type="application/json; charset=utf-8")
 
 
 @app.post("/council/consult", response_model=CosmicDecision)
